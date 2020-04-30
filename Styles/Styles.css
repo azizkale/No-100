@@ -1,0 +1,94 @@
+body
+        {
+            background-color:salmon;
+            min-width:653px;
+        }
+
+        #divKutular 
+        {            
+            width:560px;
+            height:560px;
+            position:absolute; 
+            left:50%;
+            margin-left:-250px;
+            background-color:none;                     
+            margin-top:20px;
+            border-width:0.5px;
+            border-radius:5px;
+            z-index:2;               
+                   
+        }
+
+
+#divSaat {
+    position: absolute;
+    left: 50%;
+    width: 161.6px;
+    height: 40.4px;
+    margin-left: -50px;
+    margin-top: 505px;
+    background-color: none;
+    font-family: Arial;
+    font-size: 35px;
+    text-align: center;
+    z-index: 2;
+    background-image: url(../Images/saatzemin.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#divSaat2 {
+    position: absolute;
+    left: 50%;
+    width: 161.6px;
+    height: 40.4px;
+    margin-left: -50px;
+    margin-top: 505px;
+    background-color: none;
+    font-family: Arial;
+    font-size: 35px;
+    text-align: center;
+    visibility: hidden;
+    background-image: url(../Images/saatzemin.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#divSure {
+    width: 190px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    margin-left: -170px;
+    margin-top: 60px;
+    /*border:solid;*/
+    border-width: 0.5px;
+    border-radius: 5px;
+    z-index: 1;
+    background-image: url(../Images/gosterge.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: Arial;
+    font-size: 33px;
+    text-align: center;
+}
+
+#divSkor {
+    width: 190px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    margin-left: 40px;
+    margin-top: 60px;
+    border-width: 0.5px;
+    border-radius: 5px;
+    z-index: 1;
+    background-image:url(../Images/gosterge.png);
+    background-repeat:no-repeat;
+    background-size:contain;
+    font-family: Arial; 
+    font-size: 33px;
+    text-align: center;
+             
+}
+       
