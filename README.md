@@ -5,4 +5,4 @@
 -  rules apply after the first click. Gamer can touch just available boxes.
 - The Rules are showed on the picture above.
 - Enjoy it!
-- https://azizkale.github.io/No100/
+- The game is live at https://azizkale.github.io/No100-JavaScript-Project/
