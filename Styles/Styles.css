@@ -1,24 +1,20 @@
-body
-        {
-            background-color:salmon;
-            min-width:653px;
-        }
+body {
+    background-color: salmon !important;
+    min-width: 653px;
+}
 
-        #divKutular 
-        {            
-            width:560px;
-            height:560px;
-            position:absolute; 
-            left:50%;
-            margin-left:-250px;
-            background-color:none;                     
-            margin-top:20px;
-            border-width:0.5px;
-            border-radius:5px;
-            z-index:2;               
-                   
-        }
-
+#divKutular {
+    width: 560px;
+    height: 560px;
+    position: absolute;
+    left: 50%;
+    margin-left: -250px;
+    background-color: none;
+    margin-top: 20px;
+    border-width: 0.5px;
+    border-radius: 5px;
+    z-index: 2;
+}
 
 #divSaat {
     position: absolute;
@@ -83,12 +79,10 @@ body
     border-width: 0.5px;
     border-radius: 5px;
     z-index: 1;
-    background-image:url(../Images/gosterge.png);
-    background-repeat:no-repeat;
-    background-size:contain;
-    font-family: Arial; 
+    background-image: url(../Images/gosterge.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: Arial;
     font-size: 33px;
     text-align: center;
-             
 }
-       

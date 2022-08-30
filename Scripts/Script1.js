@@ -1,9 +1,9 @@
-﻿$(document).ready(function () {
+﻿$(document).ready(function() {
     //100 kutunun oluşumu   
-    KutulariOlustur();   
-        
+    KutulariOlustur();
+
     //Açılış Animasyon
-    //$("#divKutular>p").animate({ "border-radius": "5px" }, 3000);
+    // $("#divKutular>p").animate({ "border-radius": "5px" }, 3000);
 
     //kutuların id leri ve fazla kutuları gizleme
     Kutuİdleri();
@@ -14,13 +14,19 @@
 });
 
 // saat fonksiyonu
-var saniye = 0, dakika = 0, saat = 0;
+var saniye = 0,
+    dakika = 0,
+    saat = 0;
+
 function Saat() {
     if (saniye < 59) saniye = saniye + 1;
     else {
         saniye = 0;
         if (dakika < 59) dakika = dakika + 1;
-        else { dakika = 0; saat = saat + 1; }
+        else {
+            dakika = 0;
+            saat = saat + 1;
+        }
     }
     $("#divSaat").text(saat + " : " + dakika + " : " + saniye);
 }
@@ -28,18 +34,29 @@ function Saat() {
 //Kutuları oluşturan Fonksiyon(dinamik)
 function KutulariOlustur() {
     for (var i = 1; i < 197; i++) {
-        $("<p>").appendTo("#divKutular").css({ "float": "left", "height": "40px", "width": "40px", "margin": "0px","background-color":"salmon", "font-family": "Arial", "font-size": "30px", "text-align": "center", "background-image":"url(Images/kare2.png)", "background-repeat":"no-repeat","background-size":"40px" });
+        $("<p>").appendTo("#divKutular").css({
+            "float": "left",
+            "height": "40px",
+            "width": "40px",
+            "margin": "0px",
+            "background-color": "salmon",
+            "font-family": "Arial",
+            "font-size": "30px",
+            "text-align": "center",
+            "background-image": "url(Images/kare2.png)",
+            "background-repeat": "no-repeat",
+            "background-size": "40px"
+        });
     }
 }
 
 //Kutulara id veren fonksiyon
 function Kutuİdleri() {
-    $("#divKutular p").each(function (i) {
+    $("#divKutular p").each(function(i) {
         $(this).attr("id", i);
 
         // fazlalık kutuları görünmez yapar ve textlerine 1 verir.
-        if (i >= 0 && i <= 27 || i >= 168 && i <= 195 || i % 14 == 0 || i % 14 == 1 || i % 14 == 12 || i % 14 == 13)
-        { $(this).css({ "visibility": "hidden" }).text("1") };
+        if (i >= 0 && i <= 27 || i >= 168 && i <= 195 || i % 14 == 0 || i % 14 == 1 || i % 14 == 12 || i % 14 == 13) { $(this).css({ "visibility": "hidden" }).text("1") };
 
     });
 }
@@ -53,7 +70,7 @@ var skor = 0;
 
 function KutularinClikEventi() {
 
-    $("#divKutular").on("click", "p", function () {
+    $("#divKutular").on("click", "p", function() {
         // ilk tıklama ile saay fonksiyonu çalışmaya başlar + divSaat e ve divSkor a ilk text lerini verir
         if (sayac == 1) {
             setInterval(Saat, 1000);
@@ -69,8 +86,8 @@ function KutularinClikEventi() {
             $(this).text(sayac);
             sayac++;
         }
-        
-        $("#divKutular p").each(function (i) {
+
+        $("#divKutular p").each(function(i) {
             $(this).attr("id", i);
 
             //hamle yapılabilecek kutuları belirler (kılavuz kutular)
@@ -79,24 +96,28 @@ function KutularinClikEventi() {
                 $(this).prop("disabled", false);
                 sayacOyunSonu++;
             }
-           //tıklanan kutuyu mavili kutu yapar
+            //tıklanan kutuyu mavili kutu yapar
             else if (i == k) {
                 $(this).css({
-                    "background-image": "url(Images/kare.png)", "background-repeat": "no-repeat",
-                    "background-size": "40px", "background-color": "salmon"
+                    "background-image": "url(Images/kare.png)",
+                    "background-repeat": "no-repeat",
+                    "background-size": "40px",
+                    "background-color": "salmon"
                 });
             }
             // hamle yapılamayan kutuları pasif yapar
             else {
                 $(this).css({
-                    "background-image": "url(Images/kare2.png)", "background-repeat": "no-repeat",
-                    "background-size": "40px", "background-color": "salmon"
+                    "background-image": "url(Images/kare2.png)",
+                    "background-repeat": "no-repeat",
+                    "background-size": "40px",
+                    "background-color": "salmon"
                 });
                 $(this).prop("disabled", true);
                 $(this).css({ "cursor": "default" });
             }
         });
-        skor = skor + sayac-1;
+        skor = skor + sayac - 1;
         $("#divSkor").text(skor);
 
         //hamle yapacak kutu kalmayınca divSaat alta divSaat üste geçer ve zaman durmuş gibi gözükür. son süreyi divSure ye yazdırır
@@ -112,4 +133,3 @@ function KutularinClikEventi() {
 
 
 }
-
